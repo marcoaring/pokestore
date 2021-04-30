@@ -10,12 +10,15 @@ import FirePage from './pages/fire';
 import MainPage from './pages/home/';
 import WaterPage from './pages/water';
 
+import { Svgs } from './components/svgs';
+
 import { ResetStyles } from './styles/reset';
 import { themes } from './styles/global';
 
 ReactDOM.render(
   <React.StrictMode>
     <ResetStyles />
+    <Svgs />
     <Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path="/" exact>
