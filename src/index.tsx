@@ -76,14 +76,24 @@ ReactDOM.render(
                 </ThemeProvider>
               );
             } else {
-              return <Redirect to="/404" />;
+              return (
+                <Redirect
+                  to={{ pathname: '/404', state: { message: 'Classe pokémon não encontrada.' } }}
+                />
+              );
             }
           }}
         />
         <Route path="/404" exact>
           <ErrorPage />
         </Route>
-        <Route path="*" exact render={() => <Redirect to="/404" />} />
+        <Route
+          path="*"
+          exact
+          render={() => (
+            <Redirect to={{ pathname: '/404', state: { message: 'Página não encontrada.' } }} />
+          )}
+        />
       </Switch>
     </Router>
   </React.StrictMode>,
