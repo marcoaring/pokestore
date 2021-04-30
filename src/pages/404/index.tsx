@@ -1,18 +1,27 @@
-import styled from 'styled-components';
+import { useLocation } from 'react-router-dom';
 
-const MainText = styled.p`
-  display: flex;
-  flex: 1;
-  background-color: white;
-  justify-content: center;
-  align-items: center;
-`;
+import { ILocation } from './index.interface';
+import * as S from './styles';
 
 const ErrorPage = () => {
+  const location = useLocation<ILocation>();
+
   return (
-    <>
-      <MainText>ERROR</MainText>
-    </>
+    <S.Main>
+      <S.Logo src="404.png" alt="404" title="404" />
+
+      <S.Informative>
+        <S.Strong>Ops!</S.Strong> Parece que houve um erro.
+        <br />
+        Veja abaixo o erro.
+      </S.Informative>
+
+      <S.Informative className="Error">
+        {location.state?.message || 'O erro encontrado é desconhecido.'}
+      </S.Informative>
+
+      <S.Button to="/">Voltar para a Home</S.Button>
+    </S.Main>
   );
 };
 
