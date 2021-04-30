@@ -8,7 +8,7 @@ const ErrorPage = () => {
 
   return (
     <S.Main>
-      <S.Logo src="404.png" alt="404" title="404" />
+      <S.Logo src="../404.png" alt="404" title="404" />
 
       <S.Informative>
         <S.Strong>Ops!</S.Strong> Parece que houve um erro.

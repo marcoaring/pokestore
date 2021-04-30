@@ -10,12 +10,12 @@ const MainPage = () => {
     const randomOptions = ['agua', 'fogo', 'eletrico'];
     const randomPosition = Math.floor(Math.random() * 3);
 
-    history.push(`/${randomOptions[randomPosition]}`);
+    history.push(`/${randomOptions[randomPosition]}/`);
   };
 
   return (
     <S.Main>
-      <S.Logo src="logo-pokestore.png" alt="PokeStore" title="Pokestore" />
+      <S.Logo src="../logo-pokestore.png" alt="PokeStore" title="Pokestore" />
 
       <S.Informative>
         Olá <S.Strong>treinador</S.Strong>, seja bem vindo a experiência{' '}
@@ -37,9 +37,9 @@ const MainPage = () => {
 
       {magicLink && (
         <S.Informative>
-          <S.RedirectLink to="/agua">Água</S.RedirectLink> |{' '}
-          <S.RedirectLink to="/fogo">Fogo</S.RedirectLink> |{' '}
-          <S.RedirectLink to="/eletrico">Elétrico</S.RedirectLink>
+          <S.RedirectLink to="/agua/">Água</S.RedirectLink> |{' '}
+          <S.RedirectLink to="/fogo/">Fogo</S.RedirectLink> |{' '}
+          <S.RedirectLink to="/eletrico/">Elétrico</S.RedirectLink>
         </S.Informative>
       )}
     </S.Main>

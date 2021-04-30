@@ -6,7 +6,7 @@ export function Header() {
   return (
     <S.Header>
       <S.Wrapper>
-        <S.Logo src="logo-pokestore.png" alt="Logo PokeStore" title="Logo PokeStore" />
+        <S.Logo src="../logo-pokestore.png" alt="Logo PokeStore" title="Logo PokeStore" />
 
         <S.Form>
           <S.Input type="text" name="search" placeholder="Busque seu Pokémon" autoComplete="off" />
