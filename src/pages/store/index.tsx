@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Header, Loading, Pokemon } from '../../components';
+import { Header, Loading, Navigation, Pokemon } from '../../components';
 
 import * as FetchService from '../../services/fetch';
 
@@ -29,6 +29,11 @@ const StorePage = () => {
             })}
           </S.Pokemons>
         )}
+
+        <Navigation
+          currentPagination={parseInt(sessionStorage.getItem('CURRENT_PAGINATION') || '1')}
+          pagination={parseInt(sessionStorage.getItem('PAGINATION') || '1')}
+        />
         {loading && <Loading />}
       </S.Wrapper>
     </>
