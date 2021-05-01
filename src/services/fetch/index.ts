@@ -10,12 +10,12 @@ export const getPokemons = async (type: string, currentPagination = 1) => {
   const response = (await axios.get(url)).data.pokemon;
   const pagination = Math.ceil(response.length / 20);
   let startPokemon = 0;
+  let endPokemon = 19;
 
   if (currentPagination > 1) {
     startPokemon = currentPagination * 20 - 1;
+    endPokemon = startPokemon + 20;
   }
-
-  const endPokemon = startPokemon + 20;
 
   sessionStorage.setItem('PAGINATION', pagination.toString());
   sessionStorage.setItem('CURRENT_PAGINATION', currentPagination.toString());
