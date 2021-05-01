@@ -28,6 +28,7 @@ export const ResetStyles = createGlobalStyle`
   }
 
   body {
+    background-color: #e1e1e1;
     font-family: 'Roboto', sans-serif;
   }
 

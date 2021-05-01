@@ -3,7 +3,6 @@ import media from 'styled-media-query';
 
 export const Main = styled.main`
   align-items: center;
-  background-color: #e1e1e1;
   display: flex;
   flex-flow: column;
   justify-content: center;
