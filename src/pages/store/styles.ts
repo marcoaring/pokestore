@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   height: 100%;
   justify-content: center;
   padding: 1em;
+  width: 100%;
 
   ${media.between('medium', 'large')`
     max-width: 95%;
@@ -28,4 +29,5 @@ export const Pokemons = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
 `;
