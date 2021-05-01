@@ -1,3 +1,5 @@
+import * as S from './styles';
+
 export function Loading() {
-  return <img src="loading.gif" alt="Loading com Pokebolas" title="Loading com Pokebolas" />;
+  return <S.Loading src="loading.gif" alt="Loading com Pokebolas" title="Loading com Pokebolas" />;
 }
