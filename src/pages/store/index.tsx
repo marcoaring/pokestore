@@ -16,7 +16,7 @@ const StorePage = () => {
       setPokemons(response);
       changeLoading(false);
     });
-  }, []);
+  }, [type]);
 
   return (
     <>
