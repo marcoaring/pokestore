@@ -21,7 +21,11 @@ export const getPokemons = async (type: string, currentPagination = 1) => {
   sessionStorage.setItem('CURRENT_PAGINATION', currentPagination.toString());
 
   for (let i = startPokemon; i <= endPokemon; i++) {
-    pokemons.push(await getPokemon(response[i].pokemon.name));
+    try {
+      pokemons.push(await getPokemon(response[i].pokemon.name));
+    } catch {
+      window.location.href = '/error';
+    }
   }
 
   return pokemons;
