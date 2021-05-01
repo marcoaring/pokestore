@@ -6,12 +6,16 @@ export const PokemonCard = styled.div`
   background-color: #ffffff;
   box-shadow: rgb(0 0 0 / 20%) 0px 2px 6px;
   color: #666666;
-  margin: 15px;
+  margin: 15px 0;
   padding: 15px;
   width: 98%;
 
   ${media.between('medium', 'large')`
     flex: 1 0 41%;
+  `}
+
+  ${media.greaterThan('medium')`
+    margin: 15px;
   `}
 
   ${media.greaterThan('large')`
@@ -68,9 +72,9 @@ export const Button = styled.button`
   background-color: ${(props) => props.theme.bg};
   border: 2px solid ${(props) => props.theme.bg};
   color: #ffffff;
+  font-weight: bold;
   letter-spacing: 1px;
   padding: 15px 0;
-  text-transform: uppercase;
   transition: all 0.3s linear;
   width: 100%;
 
