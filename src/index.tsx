@@ -46,6 +46,29 @@ ReactDOM.render(
           }}
         />
         <Route
+          path="/loja/:page"
+          exact
+          render={() => {
+            const currentTheme = themes.find(
+              (theme) => theme.name === localStorage.getItem('THEME')
+            );
+
+            if (currentTheme) {
+              return (
+                <ThemeProvider theme={currentTheme}>
+                  <StorePage />
+                </ThemeProvider>
+              );
+            } else {
+              return (
+                <Redirect
+                  to={{ pathname: '/404', state: { message: 'Classe pokémon não encontrada.' } }}
+                />
+              );
+            }
+          }}
+        />
+        <Route
           path="/carrinho"
           exact
           render={() => {
