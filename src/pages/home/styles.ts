@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import media from 'styled-media-query';
 
@@ -74,7 +73,7 @@ export const MagicLink = styled.a`
   }
 `;
 
-export const RedirectLink = styled(Link)`
+export const RedirectLink = styled.a`
   color: #386abb;
   text-decoration: none;
   transition: color 0.3s linear;

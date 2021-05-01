@@ -5,12 +5,20 @@ import * as S from './styles';
 const MainPage = () => {
   const [magicLink, changeMagicLink] = useState(false);
   const history = useHistory();
+  const randomOptions = ['water', 'electric', 'fire'];
 
   const randomClass = () => {
-    const randomOptions = ['agua', 'fogo', 'eletrico'];
     const randomPosition = Math.floor(Math.random() * 3);
 
-    history.push(`/${randomOptions[randomPosition]}/`);
+    localStorage.setItem('THEME', randomOptions[randomPosition]);
+
+    history.push(`/loja`);
+  };
+
+  const redirect = (type: string) => {
+    localStorage.setItem('THEME', type);
+
+    history.push(`/loja`);
   };
 
   return (
@@ -37,9 +45,17 @@ const MainPage = () => {
 
       {magicLink && (
         <S.Informative>
-          <S.RedirectLink to="/agua/">Água</S.RedirectLink> |{' '}
-          <S.RedirectLink to="/fogo/">Fogo</S.RedirectLink> |{' '}
-          <S.RedirectLink to="/eletrico/">Elétrico</S.RedirectLink>
+          <S.RedirectLink href="#" onClick={() => redirect('agua')}>
+            Água
+          </S.RedirectLink>{' '}
+          |{' '}
+          <S.RedirectLink href="#" onClick={() => redirect('fogo')}>
+            Fogo
+          </S.RedirectLink>{' '}
+          |{' '}
+          <S.RedirectLink href="#" onClick={() => redirect('eletrico')}>
+            Elétrico
+          </S.RedirectLink>
         </S.Informative>
       )}
     </S.Main>

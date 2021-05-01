@@ -4,11 +4,9 @@ import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-d
 import { ThemeProvider } from 'styled-components';
 
 import CartPage from './pages/cart';
-import ElectricPage from './pages/electric';
 import ErrorPage from './pages/404';
-import FirePage from './pages/fire';
-import MainPage from './pages/home/';
-import WaterPage from './pages/water';
+import MainPage from './pages/home';
+import StorePage from './pages/store';
 
 import { Svgs } from './components/svgs';
 
@@ -25,45 +23,26 @@ ReactDOM.render(
           <MainPage />
         </Route>
         <Route
-          path="/agua"
+          path="/loja"
           exact
           render={() => {
-            const currentTheme = themes.find((theme) => theme.name === 'water');
-            localStorage.setItem('THEME', currentTheme?.name || '');
-
-            return (
-              <ThemeProvider theme={currentTheme}>
-                <WaterPage />
-              </ThemeProvider>
+            const currentTheme = themes.find(
+              (theme) => theme.name === localStorage.getItem('THEME')
             );
-          }}
-        />
-        <Route
-          path="/eletrico"
-          exact
-          render={() => {
-            const currentTheme = themes.find((theme) => theme.name === 'electric');
-            localStorage.setItem('THEME', currentTheme?.name || '');
 
-            return (
-              <ThemeProvider theme={currentTheme}>
-                <ElectricPage />
-              </ThemeProvider>
-            );
-          }}
-        />
-        <Route
-          path="/fogo"
-          exact
-          render={() => {
-            const currentTheme = themes.find((theme) => theme.name === 'fire');
-            localStorage.setItem('THEME', currentTheme?.name || '');
-
-            return (
-              <ThemeProvider theme={currentTheme}>
-                <FirePage />
-              </ThemeProvider>
-            );
+            if (currentTheme) {
+              return (
+                <ThemeProvider theme={currentTheme}>
+                  <StorePage />
+                </ThemeProvider>
+              );
+            } else {
+              return (
+                <Redirect
+                  to={{ pathname: '/404', state: { message: 'Classe pokémon não encontrada.' } }}
+                />
+              );
+            }
           }}
         />
         <Route
