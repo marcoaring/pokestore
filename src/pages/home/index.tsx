@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+
 import * as S from './styles';
+
+import logo from '../../assets/logo-pokestore.png';
 
 const MainPage = () => {
   const [magicLink, changeMagicLink] = useState(false);
@@ -23,7 +26,7 @@ const MainPage = () => {
 
   return (
     <S.Main>
-      <S.Logo src="../logo-pokestore.png" alt="PokeStore" title="Pokestore" />
+      <S.Logo src={logo} alt="PokeStore" title="Pokestore" />
 
       <S.Informative>
         Olá <S.Strong>treinador</S.Strong>, seja bem vindo a experiência{' '}

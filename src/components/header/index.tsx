@@ -1,12 +1,18 @@
+import { Link } from 'react-router-dom';
+
 import { Icon } from '../icon';
 
 import * as S from './styles';
+
+import logo from '../../assets/logo-pokestore.png';
 
 export function Header() {
   return (
     <S.Header>
       <S.Wrapper>
-        <S.Logo src="../logo-pokestore.png" alt="Logo PokeStore" title="Logo PokeStore" />
+        <Link to="/">
+          <S.Logo src={logo} alt="Logo PokeStore" title="Logo PokeStore" />
+        </Link>
 
         <S.Form>
           <S.Input type="text" name="search" placeholder="Busque seu Pokémon" autoComplete="off" />

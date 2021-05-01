@@ -2,6 +2,8 @@ import IPokemon from './index.interface';
 
 import * as S from './styles';
 
+import imageNotFound from '../../assets/pokemon-not-found-image.png';
+
 export function Pokemon({ pokemon }: IPokemon) {
   const addToPokedex = (id: number) => {
     //Function to add pokemon into pokedex
@@ -11,7 +13,7 @@ export function Pokemon({ pokemon }: IPokemon) {
     <S.PokemonCard>
       <S.PokemonImage>
         <S.LinkDescription to={`/pokemon/${pokemon.slug}`}>
-          <S.Image src={pokemon.image} alt={pokemon.name} title={pokemon.name} />
+          <S.Image src={pokemon.image || imageNotFound} alt={pokemon.name} title={pokemon.name} />
         </S.LinkDescription>
       </S.PokemonImage>
       <S.PokemonInfos>
