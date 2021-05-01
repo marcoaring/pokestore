@@ -22,11 +22,13 @@ const StorePage = () => {
     <>
       <Header />
       <S.Wrapper>
-        {!loading &&
-          pokemons.length > 0 &&
-          pokemons.map((pokemon: any) => {
-            return <Pokemon pokemon={pokemon} key={pokemon.id} />;
-          })}
+        {!loading && pokemons.length > 0 && (
+          <S.Pokemons>
+            {pokemons.map((pokemon: any) => {
+              return <Pokemon pokemon={pokemon} key={pokemon.id} />;
+            })}
+          </S.Pokemons>
+        )}
         {loading && <Loading />}
       </S.Wrapper>
     </>
