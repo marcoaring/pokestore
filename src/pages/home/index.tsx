@@ -48,17 +48,9 @@ const MainPage = () => {
 
       {magicLink && (
         <S.Informative>
-          <S.RedirectLink href="#" onClick={() => redirect('agua')}>
-            Água
-          </S.RedirectLink>{' '}
-          |{' '}
-          <S.RedirectLink href="#" onClick={() => redirect('fogo')}>
-            Fogo
-          </S.RedirectLink>{' '}
-          |{' '}
-          <S.RedirectLink href="#" onClick={() => redirect('eletrico')}>
-            Elétrico
-          </S.RedirectLink>
+          <S.RedirectLink onClick={(e) => redirect('water')}>Água</S.RedirectLink> |{' '}
+          <S.RedirectLink onClick={(e) => redirect('fire')}>Fogo</S.RedirectLink> |{' '}
+          <S.RedirectLink onClick={(e) => redirect('electric')}>Elétrico</S.RedirectLink>
         </S.Informative>
       )}
     </S.Main>

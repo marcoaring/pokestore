@@ -72,12 +72,15 @@ export const MagicLink = styled.a`
   }
 `;
 
-export const RedirectLink = styled.a`
+export const RedirectLink = styled.button`
+  background: transparent;
+  border: none;
   color: #386abb;
   text-decoration: none;
   transition: color 0.3s linear;
 
   &:hover {
     color: #000000;
+    cursor: pointer;
   }
 `;
