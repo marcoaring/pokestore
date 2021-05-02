@@ -5,13 +5,18 @@ import { Header, Loading, Navigation, Pokemon } from '../../components';
 
 import * as FetchService from '../../services/fetch';
 
+import { PokedexContext } from '../../hooks/pokedex';
+
 import IParams from './index.interface';
 
 import * as S from './styles';
 
 const StorePage = () => {
+  const [count, setCount] = useState(0);
   const [loading, changeLoading] = useState(true);
+  const [pokedex, setPokedex] = useState([]);
   const [pokemons, setPokemons] = useState([]);
+  const [total, setTotal] = useState(0);
   const params = useParams<IParams>();
   const type = localStorage.getItem('THEME') || '';
   const currentPagination = params ? parseInt(params.page || '1') : 1;
@@ -25,14 +30,14 @@ const StorePage = () => {
   }, [type, currentPagination]);
 
   return (
-    <>
+    <PokedexContext.Provider value={{ count, setCount, total, setTotal, pokedex, setPokedex }}>
       <Header />
       <S.Wrapper>
         {!loading && pokemons.length > 0 && (
           <>
             <S.Pokemons>
-              {pokemons.map((pokemon: any) => {
-                return <Pokemon pokemon={pokemon} key={pokemon.id} />;
+              {pokemons.map((pokemon: IPokemon) => {
+                return <Pokemon key={pokemon.id} pokemon={pokemon} />;
               })}
             </S.Pokemons>
 
@@ -45,7 +50,7 @@ const StorePage = () => {
 
         {loading && <Loading />}
       </S.Wrapper>
-    </>
+    </PokedexContext.Provider>
   );
 };
 
