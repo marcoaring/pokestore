@@ -9,6 +9,7 @@ export const buildPokemon = (data: any) => {
       null,
     name: capitalizeName(data.name),
     price: parseFloat((data.base_experience / 3).toFixed(2)),
+    quantity: 1,
     slug: data.name,
     weight: data.weight,
   };
