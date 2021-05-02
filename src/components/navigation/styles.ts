@@ -1,14 +1,20 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const Navigation = styled.nav`
   align-items: center;
   color: #ffffff;
   display: flex;
-  flex-flow: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 1em;
   text-align: center;
+  width: 100%;
+
+  ${media.greaterThan('medium')`
+    flex-flow: row;
+  `}
 `;
 
 export const Item = styled(Link)`
@@ -22,7 +28,6 @@ export const Item = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.3s linear;
-  width: 100%;
 
   &:hover {
     background-color: ${(props) => props.theme.bg};
@@ -35,4 +40,8 @@ export const Item = styled(Link)`
     color: #ffffff;
     cursor: default;
   }
+
+  ${media.greaterThan('medium')`
+    width: 100%;
+  `}
 `;
