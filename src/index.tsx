@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
-import CartPage from './pages/cart';
+import PokedexPage from './pages/pokedex';
 import ErrorPage from './pages/404';
 import MainPage from './pages/home';
 import StorePage from './pages/store';
@@ -69,7 +69,7 @@ ReactDOM.render(
           }}
         />
         <Route
-          path="/carrinho"
+          path="/pokedex"
           exact
           render={() => {
             const currentTheme = localStorage.getItem('THEME') || '';
@@ -77,7 +77,7 @@ ReactDOM.render(
             if (currentTheme) {
               return (
                 <ThemeProvider theme={themes.find((theme) => theme.name === currentTheme)}>
-                  <CartPage />
+                  <PokedexPage />
                 </ThemeProvider>
               );
             } else {

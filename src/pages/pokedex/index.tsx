@@ -7,12 +7,12 @@ const MainText = styled.p`
   color: #ffffff;
 `;
 
-const CartPage = () => {
+const PokedexPage = () => {
   return (
     <>
-      <MainText>Carrinho</MainText>
+      <MainText>Pokedex</MainText>
     </>
   );
 };
 
-export default CartPage;
+export default PokedexPage;
