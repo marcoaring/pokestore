@@ -14,6 +14,7 @@ export const Navigation = styled.nav`
 
   ${media.greaterThan('medium')`
     flex-flow: row;
+    width: auto;
   `}
 `;
 
