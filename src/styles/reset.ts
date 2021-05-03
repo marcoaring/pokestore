@@ -55,10 +55,6 @@ export const ResetStyles = createGlobalStyle`
     text-decoration: underline dotted;
   }
 
-  b, strong {
-    font-weight: inherit;
-  }
-
   dfn {
     font-style: italic;
   }
