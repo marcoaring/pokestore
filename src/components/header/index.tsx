@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { usePokedex } from '../../hooks/pokedex';
 
 import { Icon } from '../icon';
+import { Search } from '../search';
 
 import * as S from './styles';
 
@@ -19,12 +20,7 @@ export function Header() {
           <S.Logo src={logo} alt="Logo PokeStore" title="Logo PokeStore" />
         </S.LinkHome>
 
-        <S.Form>
-          <S.Input type="text" name="search" placeholder="Busque seu Pokémon" autoComplete="off" />
-          <S.Button type="submit">
-            <Icon name="icon-search" />
-          </S.Button>
-        </S.Form>
+        <Search />
 
         <S.WrapperPokedex onClick={() => changeOpen(!open)}>
           <S.Count>{count}</S.Count>
