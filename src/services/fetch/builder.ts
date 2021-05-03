@@ -15,6 +15,6 @@ export const buildPokemon = (data: any) => {
   };
 };
 
-const capitalizeName = (name: string) => {
+export const capitalizeName = (name: string) => {
   return name.charAt(0).toUpperCase() + name.slice(1).replace(/(-)+/g, ' ');
 };
