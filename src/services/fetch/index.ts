@@ -17,8 +17,9 @@ export const getPokemons = async (type: string, currentPagination = 1) => {
     endPokemon = startPokemon + 19;
   }
 
-  sessionStorage.setItem('PAGINATION', pagination.toString());
   sessionStorage.setItem('CURRENT_PAGINATION', currentPagination.toString());
+  sessionStorage.setItem('PAGINATION', pagination.toString());
+  sessionStorage.setItem('POKEMONS', JSON.stringify(response));
 
   for (let i = startPokemon; i <= endPokemon; i++) {
     try {
