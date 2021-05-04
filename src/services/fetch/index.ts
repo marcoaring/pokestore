@@ -32,9 +32,9 @@ export const getPokemons = async (type: string, currentPagination = 1) => {
   return pokemons;
 };
 
-export const getPokemon = (name: string) => {
+export const getPokemon = (name: string, built = true) => {
   const url = `${urlApi}pokemon/${name}`;
   return axios.get(url).then((response) => {
-    return buildPokemon(response.data);
+    return built ? buildPokemon(response.data) : response.data;
   });
 };
