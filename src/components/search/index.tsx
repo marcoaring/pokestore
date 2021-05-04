@@ -20,7 +20,6 @@ export function Search() {
         const filteredResult = parseResult.filter((item: any) =>
           item.pokemon.name.toLowerCase().includes(val.toLowerCase())
         );
-        console.log(filteredResult);
         setPokemons(filteredResult);
 
         changeOpen(true);
