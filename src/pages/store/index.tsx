@@ -12,13 +12,15 @@ import IParams from './index.interface';
 import * as S from './styles';
 
 const StorePage = () => {
-  const [count, setCount] = useState(0);
+  const sessionPokedex: any = sessionStorage.getItem('POKEDEX');
+  const sessionTotal: any = sessionStorage.getItem('TOTAL');
+  const [count, setCount] = useState(sessionPokedex ? JSON.parse(sessionPokedex).length : 0);
   const [loading, changeLoading] = useState(true);
-  const [pokedex, setPokedex] = useState([]);
+  const [pokedex, setPokedex] = useState<any>(sessionPokedex ? JSON.parse(sessionPokedex) : []);
   const [pokemons, setPokemons] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(sessionTotal ? parseFloat(sessionTotal) : 0);
   const params = useParams<IParams>();
-  const type = localStorage.getItem('THEME') || '';
+  const type = sessionStorage.getItem('THEME') || '';
   const currentPagination = params ? parseInt(params.page || '1') : 1;
 
   useEffect(() => {

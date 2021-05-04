@@ -12,14 +12,18 @@ export function Pokemon({ pokemon }: IPokemonComponent) {
   const addToPokedex = (event: React.FormEvent, poke: IPokemon) => {
     event.preventDefault();
     const duplicated: IPokemon | any = pokedex.find((item: IPokemon) => item.id === poke.id);
+    const calcTotal = total + poke.price;
 
     if (!duplicated) {
       setPokedex([...pokedex, poke]);
       setCount(count + 1);
+      sessionStorage.setItem('POKEDEX', JSON.stringify([...pokedex, poke]));
+      sessionStorage.setItem('COUNT', String(count + 1));
     } else {
       poke.quantity = duplicated.quantity + 1;
     }
-    setTotal(total + poke.price);
+    setTotal(calcTotal);
+    sessionStorage.setItem('TOTAL', calcTotal.toString());
   };
 
   return (
