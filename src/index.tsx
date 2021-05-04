@@ -27,7 +27,7 @@ ReactDOM.render(
           exact
           render={() => {
             const currentTheme = themes.find(
-              (theme) => theme.name === localStorage.getItem('THEME')
+              (theme) => theme.name === sessionStorage.getItem('THEME')
             );
 
             if (currentTheme) {
@@ -50,7 +50,7 @@ ReactDOM.render(
           exact
           render={() => {
             const currentTheme = themes.find(
-              (theme) => theme.name === localStorage.getItem('THEME')
+              (theme) => theme.name === sessionStorage.getItem('THEME')
             );
 
             if (currentTheme) {
@@ -72,7 +72,7 @@ ReactDOM.render(
           path="/pokedex"
           exact
           render={() => {
-            const currentTheme = localStorage.getItem('THEME') || '';
+            const currentTheme = sessionStorage.getItem('THEME') || '';
 
             if (currentTheme) {
               return (

@@ -13,13 +13,13 @@ const MainPage = () => {
   const randomClass = () => {
     const randomPosition = Math.floor(Math.random() * 3);
 
-    localStorage.setItem('THEME', randomOptions[randomPosition]);
+    sessionStorage.setItem('THEME', randomOptions[randomPosition]);
 
     history.push(`/loja`);
   };
 
   const redirect = (type: string) => {
-    localStorage.setItem('THEME', type);
+    sessionStorage.setItem('THEME', type);
 
     history.push(`/loja`);
   };
