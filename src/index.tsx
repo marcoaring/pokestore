@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
-import PokedexPage from './pages/pokedex';
 import ErrorPage from './pages/404';
 import MainPage from './pages/home';
+import PokedexPage from './pages/pokedex';
+import PokemonPage from './pages/pokemon';
 import StorePage from './pages/store';
 
 import { Svgs } from './components/svgs';
@@ -78,6 +79,27 @@ ReactDOM.render(
               return (
                 <ThemeProvider theme={themes.find((theme) => theme.name === currentTheme)}>
                   <PokedexPage />
+                </ThemeProvider>
+              );
+            } else {
+              return (
+                <Redirect
+                  to={{ pathname: '/404', state: { message: 'Classe pokémon não encontrada.' } }}
+                />
+              );
+            }
+          }}
+        />
+        <Route
+          path="/pokemon/:name"
+          exact
+          render={() => {
+            const currentTheme = sessionStorage.getItem('THEME') || '';
+
+            if (currentTheme) {
+              return (
+                <ThemeProvider theme={themes.find((theme) => theme.name === currentTheme)}>
+                  <PokemonPage />
                 </ThemeProvider>
               );
             } else {
