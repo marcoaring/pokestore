@@ -20,9 +20,15 @@ ReactDOM.render(
     <Svgs />
     <Router basename={process.env.PUBLIC_URL}>
       <Switch>
-        <Route path="/" exact>
-          <MainPage />
-        </Route>
+        <Route
+          path="/"
+          exact
+          render={() => {
+            sessionStorage.clear();
+
+            return <MainPage />;
+          }}
+        />
         <Route
           path="/loja"
           exact
