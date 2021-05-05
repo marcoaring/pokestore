@@ -1,5 +1,6 @@
 import { useEffect, useState, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 import { Header, Loading } from '../../components';
 
@@ -50,6 +51,13 @@ const PokemonPage = () => {
     }
     setTotal(parseFloat(calcTotal));
     sessionStorage.setItem('TOTAL', calcTotal);
+
+    Swal.fire({
+      title: `${capitalizeName(poke.name)} capturado com sucesso!`,
+      text: `${capitalizeName(poke.name)} foi adicionado a sua pokedex.`,
+      icon: 'success',
+      confirmButtonText: 'Continuar caçada',
+    });
   };
 
   return (

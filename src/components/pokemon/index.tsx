@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 import { usePokedex } from '../../hooks/pokedex';
 
 import IPokemonComponent from './index.interface';
@@ -29,6 +31,13 @@ export function Pokemon({ pokemon }: IPokemonComponent) {
     }
     setTotal(parseFloat(calcTotal));
     sessionStorage.setItem('TOTAL', calcTotal);
+
+    Swal.fire({
+      title: `${poke.name} capturado com sucesso!`,
+      text: `${poke.name} foi adicionado a sua pokedex.`,
+      icon: 'success',
+      confirmButtonText: 'Continuar caçada',
+    });
   };
 
   return (

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 import * as S from './styles';
 
@@ -41,7 +42,16 @@ const PokedexPage = () => {
     sessionStorage.setItem('POKEDEX', JSON.stringify(newPokedex));
   };
 
-  const finishOrder = () => {};
+  const finishOrder = () => {
+    Swal.fire({
+      title: 'Caçada concluída!',
+      text: 'Uaau! Você é um verdadeiro caçador de pokémons.',
+      icon: 'success',
+      confirmButtonText: 'Reiniciar caçada',
+    }).then(() => {
+      window.location.href = '/';
+    });
+  };
   return (
     <S.Wrapper>
       <Link to="/loja">
@@ -122,7 +132,7 @@ const PokedexPage = () => {
                 })}
               </S.Text>
 
-              <S.Button onClick={() => finishOrder()}>Finalizar Pedido</S.Button>
+              <S.Button onClick={() => finishOrder()}>Finalizar Caçada</S.Button>
             </S.PokemonsFooter>
           </S.WrapperPokemons>
         ) : (
