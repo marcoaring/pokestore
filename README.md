@@ -1,46 +1,74 @@
-# Getting Started with Create React App
+# PokeStore
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Olá caçador pokémon, bem vindo ao projeto <strong>PokeStore</strong>. Uma experiência de caçada de pokémons no mundo real(quer dizer mundo virtual).
 
-## Available Scripts
+A PokeStore nasceu do projeto que desenvolvi no processo seletivo da [B2W Digital](https://ri.b2w.digital/). O objetivo do desafio era vivênciar a experiência de construir uma loja virtual mostrando como eu imaginaria uma loja online de Pokémon.
 
-In the project directory, you can run:
+Veja funcionando online em [https://marco-pokestore.netlify.app/](https://marco-pokestore.netlify.app/).
 
-### `yarn start`
+## Sobre o desenvolvimento
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Os Pokémon devem ser exibidos a partir da [pokeapi](https://pokeapi.co/), uma api RESTful com dados de quase todos os Pokémon. Os preços poderiam ser definidos aleatoriamente, então eu decidi fazer uma fórmula para o preço que é: `experiência inicial / 3`.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Exemplo: Squirtle (Experiência Inicial de 63): `63 / 3 = 21`.
 
-### `yarn test`
+Além disso, foi proposto pela B2W algumas features e algumas features bônus, caso tivesse tempo. Abaixo, segue as features que foram realizadas:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Features Principais
 
-### `yarn build`
+- [x] Catálogo de produtos
+- [x] Carrinho lateral
+- [x] Resumo do carrinho
+- [x] 3 lojas com estilos e tipos diferentes de Pokémon (Os tipos escolhidos foram Água, Fogo e Elétrico)
+- [x] Barra de busca para filtrar os Pokémon
+- [x] Botão de finalizar compra, reiniciando o processo de compra
+- [x] Modal de obrigado ao finalizar compra
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Features Bônus
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [x] Salvar os dados da compra do usuário localmente para não perdê-las ao atualizar a página
+- [ ] Testes E2E/UI automatizados para garantir que suas funcionalidades estão funcionando corretamente.
+- [x] Colocá-lo online em alguma url pública para que as pessoas consigam utilizar a loja
+- [x] Uma página com mais detalhes do Pokémon
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Rodando o projeto
 
-### `yarn eject`
+Abaixo segue instruções de como realizar a execução do projeto localmente.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Baixando e instalando as dependências do projeto
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para baixar o projeto basta fazer um clone do [repositório do projeto](https://github.com/marcoaring/pokestore).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+git clone https://github.com/marcoaring/pokestore.git
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Entre na pasta do projeto
 
-## Learn More
+```
+cd pokestore
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para instalar as dependências do projeto utilize, de preferência, o yarn. Mas, o projeto funciona rodando pelo npm também.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+yarn install ou yarn
+```
+
+### Rodando o projeto
+
+Após instalar as dependências basta rodar o comando
+
+```
+yarn start
+```
+
+O projeto será aberto na porta 3000 do seu localhost.
+
+### Buildando para produção
+
+Para buildar o projeto para produção basta inserir o seguinte comando.
+
+```
+yarn build
+```
