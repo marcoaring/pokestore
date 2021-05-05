@@ -8,6 +8,7 @@ import { Search } from '../search';
 import * as S from './styles';
 
 import logo from '../../assets/logo-pokestore.png';
+import imageNotFound from '../../assets/pokemon-not-found-image.png';
 
 export function Header() {
   const [open, changeOpen] = useState(false);
@@ -39,7 +40,11 @@ export function Header() {
                       return (
                         <S.Pokemon key={pokemon.id}>
                           <S.LinkRedirect to={`/pokemon/${pokemon.slug}`}>
-                            <S.Image src={pokemon.image} alt={pokemon.name} title={pokemon.name} />
+                            <S.Image
+                              src={pokemon.image || imageNotFound}
+                              alt={pokemon.name}
+                              title={pokemon.name}
+                            />
                             <S.Infos>
                               <S.Name>{pokemon.name}</S.Name>
                               <S.Quantity>Quantidade: {pokemon.quantity}</S.Quantity>
