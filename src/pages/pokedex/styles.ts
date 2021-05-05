@@ -27,13 +27,22 @@ export const Wrapper = styled.div`
 export const Logo = styled.img`
   display: block;
   margin: 0 auto 30px;
+  width: 70%;
+
+  ${media.greaterThan('medium')`
+    width: auto;
+  `}
 `;
 
 export const WrapperPokedex = styled.div`
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
-  padding: 30px;
+  padding: 15px;
+
+  ${media.greaterThan('medium')`
+    padding: 30px;
+  `}
 `;
 
 export const WrapperPokemons = styled.div`
@@ -46,23 +55,37 @@ export const Title = styled.h1`
 `;
 
 export const PokemonsHeader = styled.div`
-  display: flex;
-  border-bottom: 1px solid #e1e1e1;
-  padding-bottom: 10px;
-  margin-bottom: 15px;
+  display: none;
+
+  ${media.greaterThan('medium')`
+    border-bottom: 1px solid #e1e1e1;
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  `}
 `;
 
 export const Column = styled.div`
   &.-name {
-    width: 70%;
+    margin-bottom: 15px;
+    width: 100%;
+
+    ${media.greaterThan('medium')`
+      margin-bottom: 0;
+      width: 70%;
+    `}
   }
 
   &.-quantity {
-    width: 20%;
+    ${media.greaterThan('medium')`
+      width: 20%;
+    `}
   }
 
   &.-price {
-    width: 10%;
+    ${media.greaterThan('medium')`
+      width: 10%;
+    `}
   }
 
   &.-flex {
@@ -81,8 +104,16 @@ export const Pokemon = styled.li`
   align-items: center;
   border-bottom: 1px solid #e1e1e1;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: 15px;
   padding-bottom: 15px;
+
+  ${media.greaterThan('medium')`
+    flex-wrap: inherit;
+    justify-content: inherit;
+    width: 100%;
+  `}
 `;
 
 export const PokemonImage = styled.img`
@@ -114,9 +145,13 @@ export const ButtonQuantity = styled.button`
 `;
 
 export const InputQuantity = styled.input`
-  width: 20%;
+  width: 80px;
   border: none;
   text-align: center;
+
+  ${media.greaterThan('medium')`
+    width: 20%;
+  `}
 `;
 
 export const PokemonsFooter = styled.div`
@@ -131,7 +166,15 @@ export const Text = styled.p`
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 15px;
-  width: 14.2%;
+  width: 100%;
+
+  ${media.between('medium', 'large')`
+    width: 20%;
+  `}
+
+  ${media.greaterThan('large')`
+    width: 14.2%;
+  `}
 `;
 
 export const Button = styled.button`
@@ -142,7 +185,15 @@ export const Button = styled.button`
   letter-spacing: 1px;
   padding: 8px 0;
   transition: all 0.3s linear;
-  width: 14.2%;
+  width: 100%;
+
+  ${media.between('medium', 'large')`
+    width: 25%;
+  `}
+
+  ${media.greaterThan('large')`
+    width: 14.2%;
+  `}
 
   &:hover {
     background-color: transparent;
