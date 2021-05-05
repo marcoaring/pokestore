@@ -36,7 +36,7 @@ const PokemonPage = () => {
   const addToPokedex = (event: React.FormEvent, poke: IPokemon) => {
     event.preventDefault();
     const duplicated: IPokemon | any = pokedex.findIndex((item: IPokemon) => item.id === poke.id);
-    const calcTotal = total + parseFloat((poke.base_experience / 3).toFixed(2));
+    const calcTotal = (total + parseFloat((poke.base_experience / 3).toFixed(2))).toFixed(2);
 
     if (duplicated === -1) {
       setPokedex([...pokedex, buildPokemon(poke)]);
@@ -48,8 +48,8 @@ const PokemonPage = () => {
       setPokedex(pokedex);
       sessionStorage.setItem('POKEDEX', JSON.stringify(pokedex));
     }
-    setTotal(calcTotal);
-    sessionStorage.setItem('TOTAL', calcTotal.toString());
+    setTotal(parseFloat(calcTotal));
+    sessionStorage.setItem('TOTAL', calcTotal);
   };
 
   return (
