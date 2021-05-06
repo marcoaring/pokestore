@@ -98,12 +98,13 @@ const PokedexPage = () => {
                         -
                       </S.ButtonQuantity>
                       <S.InputQuantity
-                        value={pokemon.quantity}
                         maxLength={2}
                         min={0}
                         minLength={1}
+                        name="quantity"
                         onChange={(event) => changeQuantity(pokemon, event.target.value)}
                         type="number"
+                        value={pokemon.quantity}
                       />
                       <S.ButtonQuantity
                         onClick={() => changeQuantity(pokemon, (pokemon.quantity + 1).toString())}
