@@ -27,7 +27,7 @@ Além disso, foi proposto pela B2W algumas features e algumas features bônus, c
 ### Features Bônus
 
 - [x] Salvar os dados da compra do usuário localmente para não perdê-las ao atualizar a página
-- [ ] Testes E2E/UI automatizados para garantir que suas funcionalidades estão funcionando corretamente.
+- [x] Testes E2E/UI automatizados para garantir que suas funcionalidades estão funcionando corretamente.
 - [x] Colocá-lo online em alguma url pública para que as pessoas consigam utilizar a loja
 - [x] Uma página com mais detalhes do Pokémon
 
@@ -72,3 +72,21 @@ Para buildar o projeto para produção basta inserir o seguinte comando.
 ```
 yarn build
 ```
+
+### Rodando testes unitários
+
+Para rodar os testes unitários do projeto basta inserir o seguinte comando.
+
+```
+yarn test
+```
+
+Os testes irão rodar com a função watch ativada, de forma, a atualizar automaticamente quando você fizer alguma alteração no projeto.
+
+Para gerar os dados de coverage, rode o seguinte comando.
+
+```
+yarn coverage
+```
+
+Dessa forma será gerado uma pasta `coverage` na raiz do projeto, aonde está as informações do mesmo.
