@@ -5,15 +5,6 @@ import { mockPokemon } from '../../mocks/mockPokemon';
 
 import PokedexPage from './';
 
-// const mockHistoryPush = jest.fn();
-
-// jest.mock('react-router-dom', () => ({
-//   ...jest.requireActual('react-router-dom'),
-//   useHistory: () => ({
-//     push: mockHistoryPush,
-//   }),
-// }));
-
 describe('<PokedexPage />', () => {
   const count = 1;
   const total = mockPokemon.price.toFixed(2);
