@@ -23,3 +23,46 @@ export const mockNewPokemon = {
   slug: 'pikachu',
   weight: 60,
 };
+
+export const mockFromApi = {
+  'abilities': [
+    {
+      'ability': {
+        'name': 'blaze',
+        'url': 'https://pokeapi.co/api/v2/ability/66/',
+      },
+      'is_hidden': false,
+      'slot': 1,
+    },
+    {
+      'ability': {
+        'name': 'solar-power',
+        'url': 'https://pokeapi.co/api/v2/ability/94/',
+      },
+      'is_hidden': true,
+      'slot': 3,
+    },
+  ],
+  'base_experience': 62,
+  'height': 6,
+  'id': 4,
+  'name': 'charmander',
+  'weight': 85,
+  'sprites': {
+    'other': {
+      'dream_world': {
+        'front_default':
+          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/4.svg',
+      },
+    },
+  },
+  'types': [
+    {
+      'slot': 1,
+      'type': {
+        'name': 'fire',
+        'url': 'https://pokeapi.co/api/v2/type/10/',
+      },
+    },
+  ],
+};
